@@ -25,7 +25,7 @@ const menuClass = computed(() => {
 </script>
 
 <template>
-	<div class="navbar sticky top-1 md:mx-4 lg:mx-6">
+	<div class="navbar sticky top-3 md:mx-4 lg:mx-6">
 		<div
 			class="relative flex justify-between items-center my-3 mx-2 p-3 inset-shadow-sm shadow-md rounded-full bg-white md:py-3 lg:max-w-7xl lg:mx-auto"
 		>
