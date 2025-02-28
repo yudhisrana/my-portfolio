@@ -28,7 +28,7 @@ import Navbar from './components/Navbar.vue';
 		</div>
 	</section>
 	<!-- content about -->
-	<section id="about" class="content-about bg-white py-20 space-y-7">
+	<section id="about" class="content-about bg-slate-50 py-20 space-y-7">
 		<div class="flex flex-col items-center justify-center gap-6">
 			<div class="w-fit">
 				<h1 class="text-center font-bold text-4xl md:text-5xl lg:text-6xl text-orange-600">About</h1>
@@ -36,16 +36,17 @@ import Navbar from './components/Navbar.vue';
 			</div>
 			<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, quas.</p>
 		</div>
-		<div class="max-w-7xl mx-auto grid grid-cols-1 px-2 gap-5 md:px-6 lg:grid-cols-2 2xl:px-2">
-			<img src="./assets/images/profile.webp" alt="profile" class="rounded-xl shadow" />
+		<div class="max-w-7xl mx-auto grid grid-cols-1 px-2 gap-5 md:px-6 lg:grid-cols-2 lg:gap-10 2xl:px-2">
+			<img src="./assets/images/profile.webp" alt="profile" class="rounded-xl border border-slate-50" />
 			<div class="space-y-4">
 				<h1 class="text-orange-600">About Me</h1>
 				<h1 class="font-semibold text-3xl leading-tight">Full Stack Web Developer</h1>
 				<p class="leading-normal">
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam ratione veritatis assumenda odit placeat qui rem molestiae suscipit alias
-					cum?
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt odit quae accusamus autem quis ut quidem ab beatae qui sapiente itaque vitae
+					fuga eos, iste eius, earum neque soluta minima ipsum! Modi laudantium deleniti alias qui porro, velit suscipit. Nulla quae, necessitatibus
+					veniam natus incidunt officiis hic magni voluptatum eveniet!
 				</p>
-				<div class="flex bg-slate-100 rounded-xl px-2 py-8 gap-8 space-y-5 mt-6 md:px-8 md:gap-16">
+				<div class="flex bg-white rounded-xl px-2 py-8 gap-8 mt-8 inset-shadow-sm shadow-lg md:px-5 md:gap-20">
 					<div class="flex flex-col items-start gap-7">
 						<div class="space-y-2">
 							<h1 class="text-sm md:text-lg">Name :</h1>
@@ -59,7 +60,7 @@ import Navbar from './components/Navbar.vue';
 					<div class="flex flex-col items-start gap-7">
 						<div class="space-y-2">
 							<h1 class="text-sm md:text-lg">Age :</h1>
-							<h1 class="text-sm md:text-lg">35 Years Old</h1>
+							<h1 class="text-sm md:text-lg">34 Years Old</h1>
 						</div>
 						<div class="space-y-2">
 							<h1 class="text-sm md:text-lg">Email :</h1>
@@ -67,6 +68,26 @@ import Navbar from './components/Navbar.vue';
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</section>
+	<!-- skills -->
+	<section id="skill" class="skills py-20 space-y-7">
+		<div class="flex flex-col items-center justify-center gap-10">
+			<div class="w-fit">
+				<h1 class="text-center font-bold text-4xl md:text-5xl lg:text-6xl text-orange-600">Skill</h1>
+				<hr class="border-orange-700" />
+			</div>
+			<div class="skill-language max-w-7xl mx-auto grid grid-cols-3 items-center px-2 gap-5 md:px-6 lg:grid-cols-6 lg:gap-10 2xl:px-2">
+				<img src="./assets/images/golang.jpg" alt="golang" />
+				<img src="./assets/images/javascript.png" alt="javascript" />
+
+				<img src="./assets/images/typescript.png" alt="typescript" />
+
+				<img src="./assets/images/vuejs.png" alt="vuejs" />
+				<img src="./assets/images/nuxtjs.png" alt="nuxtjs" />
+
+				<img src="./assets/images/tailwindcss.png" alt="tailwindcss" />
 			</div>
 		</div>
 	</section>

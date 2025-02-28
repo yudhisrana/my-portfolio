@@ -42,6 +42,9 @@ const menuClass = computed(() => {
 					<a href="#about" @click="toggleMenu">About</a>
 				</li>
 				<li class="hover:text-orange-600">
+					<a href="#skill" @click="toggleMenu">Skill</a>
+				</li>
+				<li class="hover:text-orange-600">
 					<a href="#">Project</a>
 				</li>
 				<li class="hover:text-orange-600">
