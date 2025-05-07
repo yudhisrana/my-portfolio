@@ -1,11 +1,29 @@
+'use client';
+
 import { menuNavbar } from '@/data/data';
 import Link from 'next/link';
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
+	const [isScrolled, setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 10);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => window.addEventListener('scroll', handleScroll);
+	});
+
 	return (
-		<div className="py-5 relative z-50">
-			<div className="flex items-center justify-between border rounded-full py-3 px-4">
+		<nav className="sticky top-0 z-50 py-5">
+			<div
+				className={`flex items-center justify-between border rounded-full py-3 px-4 ${
+					isScrolled ? 'bg-neutral-950' : ''
+				}`}
+			>
 				<div className="logo">
 					<h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600">
 						DYR
@@ -17,7 +35,7 @@ const Navbar = () => {
 							<li key={menu.id}>
 								<Link
 									href={menu.link}
-									className="text-sm font-semibold cursor-pointer"
+									className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600 cursor-pointer"
 								>
 									{menu.name}
 								</Link>
@@ -26,7 +44,7 @@ const Navbar = () => {
 					</ul>
 				</div>
 			</div>
-		</div>
+		</nav>
 	);
 };
 

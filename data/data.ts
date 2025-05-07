@@ -25,3 +25,5 @@ export const menuNavbar = [
 		link: '#',
 	},
 ];
+
+export const words = ['Saya Dipo Yudhis Rana', 'Saya Seorang Web Developer'];
