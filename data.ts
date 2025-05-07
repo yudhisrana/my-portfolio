@@ -26,4 +26,7 @@ export const menuNavbar = [
 	},
 ];
 
-export const words = ['Saya Dipo Yudhis Rana', 'Saya Seorang Web Developer'];
+export const words = [
+	'Nama Saya Dipo Yudhis Rana',
+	'Dan Saya Seorang Web Developer',
+];

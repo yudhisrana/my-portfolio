@@ -1,6 +1,6 @@
 'use client';
 
-import { menuNavbar } from '@/data/data';
+import { menuNavbar } from '@/data';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 

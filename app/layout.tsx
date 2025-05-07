@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: 'dyr-portfolio',
+	title: 'Dipo Yudhis Rana',
 	description: 'Portfolio Dipo Yudhis Rana',
 };
 
