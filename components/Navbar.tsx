@@ -3,9 +3,16 @@
 import { menuNavbar } from '@/data';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { FaSquareGithub } from 'react-icons/fa6';
+import { FaSquareFacebook } from 'react-icons/fa6';
+import { FaLinkedin } from 'react-icons/fa6';
+import { VscListSelection } from 'react-icons/vsc';
+import { LiaTimesSolid } from 'react-icons/lia';
 
 const Navbar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [sizeIcon, setSizeIcon] = useState(0);
+	const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -14,8 +21,28 @@ const Navbar = () => {
 
 		window.addEventListener('scroll', handleScroll);
 
-		return () => window.addEventListener('scroll', handleScroll);
-	});
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth < 768) {
+				setSizeIcon(20);
+			} else {
+				setSizeIcon(25);
+			}
+		};
+
+		handleResize();
+
+		window.addEventListener('resize', handleResize);
+
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
+	const handleToggle = () => {
+		setIsOpen(!isOpen);
+	};
 
 	return (
 		<nav className="sticky top-0 z-50 py-5">
@@ -24,24 +51,53 @@ const Navbar = () => {
 					isScrolled ? 'bg-neutral-950' : ''
 				}`}
 			>
+				{/* logo */}
 				<div className="logo">
 					<h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600">
 						DYR
 					</h1>
 				</div>
-				<div className="listMenu">
-					<ul className="flex items-center gap-2">
+
+				{/* list menu */}
+				<div
+					className={`listMenu fixed top-[80px] bg-background w-full py-6 px-4 transition-all duration-500 ease-in-out md:static md:top-auto md:left-auto md:bg-transparent md:p-0 ${
+						isOpen ? 'left-0' : '-left-full'
+					}`}
+				>
+					<ul className="flex items-center justify-center gap-4">
 						{menuNavbar.map((menu) => (
 							<li key={menu.id}>
 								<Link
 									href={menu.link}
-									className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600 cursor-pointer"
+									className="text-base font-semibold text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600 lg:text-lg"
 								>
 									{menu.name}
 								</Link>
 							</li>
 						))}
 					</ul>
+				</div>
+
+				{/* icon socialmedia */}
+				<div className="social-media flex items-center gap-2">
+					<Link href="#">
+						<FaSquareFacebook size={sizeIcon} className="text-neutral-400" />
+					</Link>
+					<Link href="#">
+						<FaSquareGithub size={sizeIcon} className="text-neutral-400" />
+					</Link>
+					<Link href="#">
+						<FaLinkedin size={sizeIcon} className="text-neutral-400" />
+					</Link>
+
+					{/* toggle mobile */}
+					<button onClick={handleToggle} className="menu-toggle ml-4 md:hidden">
+						{isOpen ? (
+							<LiaTimesSolid size={20} className="text-neutral-400" />
+						) : (
+							<VscListSelection size={20} className="text-neutral-400" />
+						)}
+					</button>
 				</div>
 			</div>
 		</nav>

@@ -1,3 +1,9 @@
+import HeroImage from '@/public/assets/hero.jpeg';
+
+export const image = {
+	HeroImage,
+};
+
 export const menuNavbar = [
 	{
 		id: 1,

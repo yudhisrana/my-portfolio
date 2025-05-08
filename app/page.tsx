@@ -1,9 +1,10 @@
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { FlipWords } from '@/components/ui/flip-words';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
-import { words } from '@/data';
+import { image, words } from '@/data';
 import { ArrowDown, FileText } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
 	return (
@@ -32,19 +33,23 @@ export default function Home() {
 						<HoverBorderGradient
 							containerClassName="rounded-full"
 							as="button"
-							className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+							className="dark:bg-black bg-white text-black dark:text-white"
 						>
-							<span className="text-neutral-400">Download CV</span>
-							<FileText className="h-4 w-4 text-neutral-400" />
+							<Link href="#" className="flex items-center space-x-2">
+								<span className="text-neutral-400">Download CV</span>
+								<FileText className="h-4 w-4 text-neutral-400" />
+							</Link>
 						</HoverBorderGradient>
 
 						<HoverBorderGradient
 							containerClassName="rounded-full"
 							as="button"
-							className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+							className="dark:bg-black bg-white text-black dark:text-white"
 						>
-							<span className="text-neutral-400">Lihat Proyek</span>
-							<ArrowDown className="h-4 w-4 text-neutral-400" />
+							<Link href="#" className="flex items-center space-x-2">
+								<span className="text-neutral-400">Lihat Proyek</span>
+								<ArrowDown className="h-4 w-4 text-neutral-400" />
+							</Link>
 						</HoverBorderGradient>
 					</div>
 				</div>
@@ -52,8 +57,8 @@ export default function Home() {
 				{/* Right Content */}
 				<div className="border rounded-md w-fit">
 					<Image
-						src="/assets/hero.jpeg"
-						alt="Foto Hero"
+						src={image.HeroImage}
+						alt="hero-img"
 						width={350}
 						height={350}
 						sizes="(max-width: 768px) 300px, 350px"
