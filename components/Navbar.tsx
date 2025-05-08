@@ -2,43 +2,24 @@
 
 import { menuNavbar } from '@/data';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FaSquareGithub } from 'react-icons/fa6';
 import { FaSquareFacebook } from 'react-icons/fa6';
 import { FaLinkedin } from 'react-icons/fa6';
 import { VscListSelection } from 'react-icons/vsc';
 import { LiaTimesSolid } from 'react-icons/lia';
+import useDetecScrolled from '@/hooks/detect-scrolled';
+import useDetectSize from '@/hooks/detect-size';
 
 const Navbar = () => {
-	const [isScrolled, setIsScrolled] = useState(false);
-	const [sizeIcon, setSizeIcon] = useState(0);
 	const [isOpen, setIsOpen] = useState(false);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 10);
-		};
-
-		window.addEventListener('scroll', handleScroll);
-
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
-
-	useEffect(() => {
-		const handleResize = () => {
-			if (window.innerWidth < 768) {
-				setSizeIcon(20);
-			} else {
-				setSizeIcon(25);
-			}
-		};
-
-		handleResize();
-
-		window.addEventListener('resize', handleResize);
-
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
+	const isScrolled = useDetecScrolled();
+	const sizeIcon = useDetectSize({
+		minSize: 20,
+		maxSize: 25,
+		width: 768,
+	});
 
 	const handleToggle = () => {
 		setIsOpen(!isOpen);
