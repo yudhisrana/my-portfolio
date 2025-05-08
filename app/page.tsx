@@ -61,7 +61,6 @@ export default function Home() {
 						alt="hero-img"
 						width={350}
 						height={350}
-						sizes="(max-width: 768px) 300px, 350px"
 						className="rounded-md w-[300px] lg:w-[350px] h-auto"
 					/>
 				</div>
