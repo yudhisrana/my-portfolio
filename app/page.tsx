@@ -1,3 +1,4 @@
+import CodeBlockJson from '@/components/CodeBlockJson';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { FlipWords } from '@/components/ui/flip-words';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
@@ -12,9 +13,9 @@ export default function Home() {
 			<BackgroundBeams />
 
 			{/* hero section */}
-			<section className="hero-section max-w-4xl flex flex-col py-5 md:py-10 md:flex-row gap-10 md:gap-0 items-center justify-between mx-auto">
+			<section className="hero-section flex flex-col gap-10 md:flex-row md:max-w-5xl md:py-5 md:items-center md:justify-center md:mx-auto">
 				{/* Left Content */}
-				<div className="space-y-4 max-w-sm lg:max-w-md">
+				<div className="space-y-4 md:max-w-md lg:max-w-lg">
 					<h1 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600">
 						Hi 👋🏼, Perkenalkan
 					</h1>
@@ -22,14 +23,8 @@ export default function Home() {
 						words={words}
 						className="text-xl lg:text-2xl font-bold text-neutral-400 bg-neutral-800 rounded-md p-2"
 					/>
-					<p className="text-neutral-400 text-base font-semibold text-justify">
-						Saya memiliki ketertarikan yang kuat di bidang programming,
-						khususnya dalam membangun website personal dan web aplikasi yang
-						fungsional, modern, dan user-friendly. Dengan mengutamakan kualitas
-						dan performa, saya berkomitmen untuk membantu individu maupun bisnis
-						dalam menciptakan solusi digital yang efektif dan berdampak.
-					</p>
-					<div className="flex text-center gap-4">
+					<CodeBlockJson />
+					<div className="flex text-center gap-4 justify-center md:justify-start">
 						<HoverBorderGradient
 							containerClassName="rounded-full"
 							as="button"
@@ -55,13 +50,13 @@ export default function Home() {
 				</div>
 
 				{/* Right Content */}
-				<div className="border rounded-md w-fit">
+				<div className="flex justify-center rounded-md w-full md:justify-end">
 					<Image
 						src={image.HeroImage}
 						alt="hero-img"
 						width={350}
 						height={350}
-						className="rounded-md w-[300px] lg:w-[350px] h-auto"
+						className="rounded-md h-auto"
 					/>
 				</div>
 			</section>
