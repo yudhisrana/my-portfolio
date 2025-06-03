@@ -1,3 +1,4 @@
+import CardSkills from '@/components/CardSkills';
 import CodeBlockJson from '@/components/CodeBlockJson';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { FlipWords } from '@/components/ui/flip-words';
@@ -58,6 +59,37 @@ export default function Home() {
 						height={350}
 						className="rounded-md h-auto"
 					/>
+				</div>
+			</section>
+
+			<section
+				id="about"
+				className="about-section max-w-5xl mx-auto pb-5 pt-28 flex justify-center items-center"
+			>
+				<div className="flex flex-col items-center gap-10">
+					<h1 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600">
+						ABOUT
+					</h1>
+					<p className="text-neutral-400 text-center">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+						hic veritatis sequi vero commodi aliquam iure perferendis quis omnis
+						tempora dicta pariatur quae blanditiis totam ut dolore quidem iste
+						consequuntur quibusdam cumque, modi obcaecati unde corporis enim.
+						Quibusdam neque saepe deserunt blanditiis dolor dolorem a labore,
+						earum molestiae ipsum ad?
+					</p>
+				</div>
+			</section>
+
+			<section
+				id="skills"
+				className="about-section pb-5 pt-28 max-w-5xl mx-auto"
+			>
+				<div className="flex flex-col gap-10 items-center">
+					<h1 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600">
+						SKILLS
+					</h1>
+					<CardSkills />
 				</div>
 			</section>
 		</>

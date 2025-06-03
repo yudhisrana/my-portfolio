@@ -1,8 +1,18 @@
 import HeroImage from '@/public/assets/hero.jpeg';
 
+import GoImg from '@/public/assets/golang.png';
+import JavaScriptImg from '@/public/assets/javascript.png';
+import TypeScriptImg from '@/public/assets/typescript.png';
+import ReactJsImg from '@/public/assets/reactjs.png';
+
 export const image = {
 	HeroImage,
 };
+
+export const words = [
+	'Nama Saya Dipo Yudhis Rana',
+	'Dan Saya Seorang Fullstack Developer',
+];
 
 export const menuNavbar = [
 	{
@@ -13,12 +23,12 @@ export const menuNavbar = [
 	{
 		id: 2,
 		name: 'About',
-		link: '#',
+		link: '#about',
 	},
 	{
 		id: 3,
-		name: 'Tools',
-		link: '#',
+		name: 'Skills',
+		link: '#skills',
 	},
 	{
 		id: 4,
@@ -32,7 +42,25 @@ export const menuNavbar = [
 	},
 ];
 
-export const words = [
-	'Nama Saya Dipo Yudhis Rana',
-	'Dan Saya Seorang Fullstack Developer',
+export const skills = [
+	{
+		id: 1,
+		img: GoImg,
+		name: 'Golang',
+	},
+	{
+		id: 2,
+		img: JavaScriptImg,
+		name: 'JavaScript',
+	},
+	{
+		id: 3,
+		img: TypeScriptImg,
+		name: 'TypeScript',
+	},
+	{
+		id: 4,
+		img: ReactJsImg,
+		name: 'ReactJS',
+	},
 ];

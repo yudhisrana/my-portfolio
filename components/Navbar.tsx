@@ -25,6 +25,10 @@ const Navbar = () => {
 		setIsOpen(!isOpen);
 	};
 
+	const handleMenuClose = () => {
+		setIsOpen(false);
+	};
+
 	return (
 		<nav className="sticky top-0 z-50 py-5">
 			<div
@@ -49,6 +53,7 @@ const Navbar = () => {
 						{menuNavbar.map((menu) => (
 							<li key={menu.id}>
 								<Link
+									onClick={handleMenuClose}
 									href={menu.link}
 									className="text-base font-semibold text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600 lg:text-lg"
 								>
